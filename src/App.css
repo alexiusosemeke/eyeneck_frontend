@@ -1,0 +1,107 @@
+.pvc-card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+.guilloche-pattern {
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(0, 107, 63, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 12px 12px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  vertical-align: middle;
+}
+.settings-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.settings-card:hover {
+  box-shadow: 0px 4px 20px rgba(0, 107, 63, 0.05);
+}
+.active-tab-indicator {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #006b3f;
+}
+
+.mesh-gradient-bg {
+  background-color: #fdf8f8;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(147, 100%, 21%, 0.08) 0px, transparent 50%),
+    radial-gradient(
+      at 100% 0%,
+      hsla(147, 100%, 35%, 0.08) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 100% 100%,
+      hsla(147, 100%, 21%, 0.05) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, hsla(147, 100%, 35%, 0.05) 0px, transparent 50%);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 48px -4px rgba(0, 135, 81, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 135, 81, 0.3);
+  box-shadow: 0 20px 40px -8px rgba(0, 135, 81, 0.12);
+  transform: translateY(-4px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #002110 0%, #006b3f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 135, 81, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 135, 81, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 135, 81, 0);
+  }
+}
+
+.stat-glow {
+  text-shadow: 0 0 30px rgba(0, 135, 81, 0.2);
+}

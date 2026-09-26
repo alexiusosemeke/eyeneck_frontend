@@ -1,0 +1,218 @@
+/* 1. ALL imports must be at the very top of the file */
+@import "tailwindcss";
+@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@theme {
+  /* ==========================================
+     1. COLORS (Nigeria Decides Theme)
+     ========================================== */
+  --color-surface: #fcf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fcf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0edec;
+  --color-surface-container-high: #ebe7e7;
+  --color-surface-container-highest: #e5e2e1;
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #3e4a41;
+  --color-inverse-surface: #313030;
+  --color-inverse-on-surface: #f3f0ef;
+  --color-outline: #6e7a70;
+  --color-outline-variant: #bdcabe;
+  --color-surface-tint: #006d40;
+  
+  /* Primary (Nigerian Green) */
+  --color-primary: #006b3f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #008751;
+  --color-on-primary-container: #fdfff9;
+  --color-inverse-primary: #70db9d;
+  
+  /* Secondary (Neutrals/Grays) */
+  --color-secondary: #5d5f5f;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dfe0e0;
+  --color-on-secondary-container: #616363;
+  
+  /* Tertiary (Soft Gold Highlights) */
+  --color-tertiary: #735c00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #cca730;
+  --color-on-tertiary-container: #4f3d00;
+  
+  /* Error / Alerts */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  
+  /* Fixed Variations */
+  --color-primary-fixed: #8df8b7;
+  --color-primary-fixed-dim: #70db9d;
+  --color-on-primary-fixed: #002110;
+  --color-on-primary-fixed-variant: #00522f;
+  --color-secondary-fixed: #e2e2e2;
+  --color-secondary-fixed-dim: #c6c6c7;
+  --color-on-secondary-fixed: #1a1c1c;
+  --color-on-secondary-fixed-variant: #454747;
+  --color-tertiary-fixed: #ffe088;
+  --color-tertiary-fixed-dim: #e9c349;
+  --color-on-tertiary-fixed: #241a00;
+  --color-on-tertiary-fixed-variant: #574500;
+  
+  /* Core Backgrounds */
+  --color-background: #fcf9f8;
+  --color-on-background: #1c1b1b;
+  --color-surface-variant: #e5e2e1;
+
+  /* ==========================================
+     2. TYPOGRAPHY (Hanken Grotesk)
+     ========================================== */
+  --font-sans: "Hanken Grotesk", sans-serif;
+
+  --font-hanken: "Hanken Grotesk", sans-serif;
+
+  /* ==========================================
+     3. BORDER RADIUS (Soft Shape Language)
+     ========================================== */
+  --radius-sm: 0.125rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* ==========================================
+     4. LAYOUT & SPACING (8px Base Scale)
+     ========================================== */
+  --spacing-base: 8px;
+  --spacing-gutter: 24px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 20px;
+  
+  /* Max width for desktop fixed layout grids */
+  --width-container-max: 1280px;
+
+  /* ==========================================
+     5. ELEVATION (Ambient Tinted Shadow)
+     ========================================== */
+  --shadow-ambient: 0px 4px 20px rgba(0, 109, 64, 0.10);
+  
+}
+
+/* ==========================================
+   6. GLOBAL STYLES
+   ========================================== */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+
+  }
+}
+
+/* ==========================================
+   7. CUSTOM UTILITY CLASSES
+   ========================================== */
+@layer utilities {
+  /* Headline Styles */
+  .text-headline-xl {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 1024px) {
+    .text-headline-xl {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  .text-headline-lg {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  .text-headline-md {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  /* Body Styles */
+  .text-body-lg {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .text-body-md {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  /* Label Styles */
+  .text-label-lg {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .text-label-md {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  /* Layout Structure Utilities */
+  .layout-container {
+    width: 100%;
+    max-width: var(--width-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-margin-mobile);
+    padding-right: var(--spacing-margin-mobile);
+  }
+  @media (min-width: 768px) {
+    .layout-container {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .layout-container {
+      padding-left: var(--spacing-margin-desktop);
+      padding-right: var(--spacing-margin-desktop);
+    }
+  }
+
+  .icon {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga';
+  }
+}
+
