@@ -1,4 +1,4 @@
-## EYENECK — Frontend
+# EYENECK — Frontend
 
 The frontend application for Eyeneck, a digital voting and election management platform.
 
